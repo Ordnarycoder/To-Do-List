@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <title>To-Do List</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&family=Oswald:wght@200..700&display=swap" rel="stylesheet">
+    <style>
+        .custom-checkbox {
+            display: none;
+        }
+        
+        h1 {
+            font-family: "Oswald";
+        }
+
+        .list-group-item {
+            display: flex;
+            align-items: center;
+            padding: 15px;
+            flex-wrap: wrap;
+        }
+
+        .custom-checkbox + label {
+            display: inline-block;
+            width: 20px;
+            height: 20px;
+            border: 2px solid #007bff;
+            border-radius: 4px;
+            position: relative;
+            cursor: pointer;
+            vertical-align: middle;
+            margin-right: 10px;
+        }
+
+        .custom-checkbox + label::after {
+            content: '';
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            width: 10px;
+            height: 10px;
+            background-color: #007bff;
+            transform: translate(-50%, -50%) scale(0);
+            border-radius: 2px;
+            transition: transform 0.2s ease;
+        }
+
+        .custom-checkbox:checked + label::after {
+            transform: translate(-50%, -50%) scale(1);
+        }
+
+        .btn-danger {
+            margin-top: 5px;
+            margin-left: 10px;
+            font-family: "Montserrat";
+        }
+
+        .btn-primary {
+            font-family: "Montserrat";
+        }
+    </style>
+</head>
+<body>
+    <div class="container mt-5">
+        <div class="row">
+            <div class="col-md-8 offset-md-2">
+                <h1 class="text-center mb-4">To-Do List</h1>
+                <div class="input-group mb-3">
+                    <input type="text" class="form-control" placeholder="Enter a new task" aria-label="Enter a new task">
+                    <div class="input-group-append">
+                        <button class="btn btn-primary" id="add-job" type="button">Add Job</button>
+                    </div>
+                </div>
+                <ul class="list-group" id="job-list">
+                    <li class="list-group-item d-flex justify-content-between align-items-center job">
+                        <input type="checkbox" class="custom-checkbox" id="checkbox-1">
+                        <label for="checkbox-1"></label>
+                        <span>Do your homework</span>
+                        <div>
+                            <button class="btn btn-danger btn-sm">Delete Job</button>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.14.7/dist/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+</body>
+</html>
